@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Device {
+  id            Int            @id @default(autoincrement()) @map("id")
+  device_id     String         @unique @map("device_id")
+  name          String?        @map("name")
+  device_state  DeviceState[]  @relation("Device_DeviceState")
+  machine_state MachineState[] @relation("Device_MachineState")
+  created_at    DateTime       @default(now()) @map("created_at")
+  updated_at    DateTime       @updatedAt @map("updated_at")
+}
+
+model DeviceState {
+  id              Int      @id @default(autoincrement()) @map("id")
+  device_id       String   @map("device_id")
+  temperature     Float    @map("temperature")
+  humidity        Float    @map("humidity")
+  pressure        Float    @map("pressure")
+  light_level     Float    @map("light_level")
+  soil_moisture   Float    @map("soil_moisture")
+  motion_detected Boolean  @map("motion_detected")
+  co2_level       Float    @map("co2_level")
+  gas_leak        Boolean  @map("gas_leak")
+  flame_detected  Boolean  @map("flame_detected")
+  noise_level     Float    @map("noise_level")
+  created_at      DateTime @default(now()) @map("created_at")
+
+  device Device @relation("Device_DeviceState", fields: [device_id], references: [device_id])
+}
+
+model MachineState {
+  id            Int      @id @default(autoincrement()) @map("id")
+  device_id     String   @map("device_id")
+  water_pump    Boolean  @map("water_pump")
+  acid_solution Boolean  @map("acid_solution")
+  npk_solution  Boolean  @map("npk_solution")
+  created_at    DateTime @default(now()) @map("created_at")
+
+  device Device @relation("Device_MachineState", fields: [device_id], references: [device_id])
+}

@@ -1,20 +1,12 @@
-const express = require('express');
+// src/server.js
+const express = require("express");
 const app = express();
-const port = 3001;
+const PORT = 3001;
 
-let status = false;  
-
-app.use(express.json());
-
-app.get('/', (req, res) => {
-  res.json({ status: status });
+app.get("/", (req, res) => {
+  res.send("Hello World");
 });
 
-app.post('/', (req, res) => {
-  status = !status;
-  res.json({ message: 'Status changed', newStatus: status });
-});
-
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
