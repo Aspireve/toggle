@@ -2236,55 +2236,31 @@ export namespace Prisma {
 
   export type DeviceStateAvgAggregateOutputType = {
     id: number | null
-    temperature: number | null
-    humidity: number | null
-    pressure: number | null
-    light_level: number | null
-    soil_moisture: number | null
-    co2_level: number | null
-    noise_level: number | null
   }
 
   export type DeviceStateSumAggregateOutputType = {
     id: number | null
-    temperature: number | null
-    humidity: number | null
-    pressure: number | null
-    light_level: number | null
-    soil_moisture: number | null
-    co2_level: number | null
-    noise_level: number | null
   }
 
   export type DeviceStateMinAggregateOutputType = {
     id: number | null
     device_id: string | null
-    temperature: number | null
-    humidity: number | null
-    pressure: number | null
-    light_level: number | null
-    soil_moisture: number | null
-    motion_detected: boolean | null
-    co2_level: number | null
-    gas_leak: boolean | null
-    flame_detected: boolean | null
-    noise_level: number | null
+    temperature: string | null
+    humidity: string | null
+    phValue: string | null
+    ecValue: string | null
+    waterLevel: string | null
     created_at: Date | null
   }
 
   export type DeviceStateMaxAggregateOutputType = {
     id: number | null
     device_id: string | null
-    temperature: number | null
-    humidity: number | null
-    pressure: number | null
-    light_level: number | null
-    soil_moisture: number | null
-    motion_detected: boolean | null
-    co2_level: number | null
-    gas_leak: boolean | null
-    flame_detected: boolean | null
-    noise_level: number | null
+    temperature: string | null
+    humidity: string | null
+    phValue: string | null
+    ecValue: string | null
+    waterLevel: string | null
     created_at: Date | null
   }
 
@@ -2293,14 +2269,9 @@ export namespace Prisma {
     device_id: number
     temperature: number
     humidity: number
-    pressure: number
-    light_level: number
-    soil_moisture: number
-    motion_detected: number
-    co2_level: number
-    gas_leak: number
-    flame_detected: number
-    noise_level: number
+    phValue: number
+    ecValue: number
+    waterLevel: number
     created_at: number
     _all: number
   }
@@ -2308,24 +2279,10 @@ export namespace Prisma {
 
   export type DeviceStateAvgAggregateInputType = {
     id?: true
-    temperature?: true
-    humidity?: true
-    pressure?: true
-    light_level?: true
-    soil_moisture?: true
-    co2_level?: true
-    noise_level?: true
   }
 
   export type DeviceStateSumAggregateInputType = {
     id?: true
-    temperature?: true
-    humidity?: true
-    pressure?: true
-    light_level?: true
-    soil_moisture?: true
-    co2_level?: true
-    noise_level?: true
   }
 
   export type DeviceStateMinAggregateInputType = {
@@ -2333,14 +2290,9 @@ export namespace Prisma {
     device_id?: true
     temperature?: true
     humidity?: true
-    pressure?: true
-    light_level?: true
-    soil_moisture?: true
-    motion_detected?: true
-    co2_level?: true
-    gas_leak?: true
-    flame_detected?: true
-    noise_level?: true
+    phValue?: true
+    ecValue?: true
+    waterLevel?: true
     created_at?: true
   }
 
@@ -2349,14 +2301,9 @@ export namespace Prisma {
     device_id?: true
     temperature?: true
     humidity?: true
-    pressure?: true
-    light_level?: true
-    soil_moisture?: true
-    motion_detected?: true
-    co2_level?: true
-    gas_leak?: true
-    flame_detected?: true
-    noise_level?: true
+    phValue?: true
+    ecValue?: true
+    waterLevel?: true
     created_at?: true
   }
 
@@ -2365,14 +2312,9 @@ export namespace Prisma {
     device_id?: true
     temperature?: true
     humidity?: true
-    pressure?: true
-    light_level?: true
-    soil_moisture?: true
-    motion_detected?: true
-    co2_level?: true
-    gas_leak?: true
-    flame_detected?: true
-    noise_level?: true
+    phValue?: true
+    ecValue?: true
+    waterLevel?: true
     created_at?: true
     _all?: true
   }
@@ -2466,16 +2408,11 @@ export namespace Prisma {
   export type DeviceStateGroupByOutputType = {
     id: number
     device_id: string
-    temperature: number
-    humidity: number
-    pressure: number
-    light_level: number
-    soil_moisture: number
-    motion_detected: boolean
-    co2_level: number
-    gas_leak: boolean
-    flame_detected: boolean
-    noise_level: number
+    temperature: string
+    humidity: string
+    phValue: string
+    ecValue: string
+    waterLevel: string
     created_at: Date
     _count: DeviceStateCountAggregateOutputType | null
     _avg: DeviceStateAvgAggregateOutputType | null
@@ -2503,14 +2440,9 @@ export namespace Prisma {
     device_id?: boolean
     temperature?: boolean
     humidity?: boolean
-    pressure?: boolean
-    light_level?: boolean
-    soil_moisture?: boolean
-    motion_detected?: boolean
-    co2_level?: boolean
-    gas_leak?: boolean
-    flame_detected?: boolean
-    noise_level?: boolean
+    phValue?: boolean
+    ecValue?: boolean
+    waterLevel?: boolean
     created_at?: boolean
     device?: boolean | DeviceDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["deviceState"]>
@@ -2520,14 +2452,9 @@ export namespace Prisma {
     device_id?: boolean
     temperature?: boolean
     humidity?: boolean
-    pressure?: boolean
-    light_level?: boolean
-    soil_moisture?: boolean
-    motion_detected?: boolean
-    co2_level?: boolean
-    gas_leak?: boolean
-    flame_detected?: boolean
-    noise_level?: boolean
+    phValue?: boolean
+    ecValue?: boolean
+    waterLevel?: boolean
     created_at?: boolean
     device?: boolean | DeviceDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["deviceState"]>
@@ -2537,14 +2464,9 @@ export namespace Prisma {
     device_id?: boolean
     temperature?: boolean
     humidity?: boolean
-    pressure?: boolean
-    light_level?: boolean
-    soil_moisture?: boolean
-    motion_detected?: boolean
-    co2_level?: boolean
-    gas_leak?: boolean
-    flame_detected?: boolean
-    noise_level?: boolean
+    phValue?: boolean
+    ecValue?: boolean
+    waterLevel?: boolean
     created_at?: boolean
     device?: boolean | DeviceDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["deviceState"]>
@@ -2554,18 +2476,13 @@ export namespace Prisma {
     device_id?: boolean
     temperature?: boolean
     humidity?: boolean
-    pressure?: boolean
-    light_level?: boolean
-    soil_moisture?: boolean
-    motion_detected?: boolean
-    co2_level?: boolean
-    gas_leak?: boolean
-    flame_detected?: boolean
-    noise_level?: boolean
+    phValue?: boolean
+    ecValue?: boolean
+    waterLevel?: boolean
     created_at?: boolean
   }
 
-  export type DeviceStateOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "device_id" | "temperature" | "humidity" | "pressure" | "light_level" | "soil_moisture" | "motion_detected" | "co2_level" | "gas_leak" | "flame_detected" | "noise_level" | "created_at", ExtArgs["result"]["deviceState"]>
+  export type DeviceStateOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "device_id" | "temperature" | "humidity" | "phValue" | "ecValue" | "waterLevel" | "created_at", ExtArgs["result"]["deviceState"]>
   export type DeviceStateInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     device?: boolean | DeviceDefaultArgs<ExtArgs>
   }
@@ -2584,16 +2501,11 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: number
       device_id: string
-      temperature: number
-      humidity: number
-      pressure: number
-      light_level: number
-      soil_moisture: number
-      motion_detected: boolean
-      co2_level: number
-      gas_leak: boolean
-      flame_detected: boolean
-      noise_level: number
+      temperature: string
+      humidity: string
+      phValue: string
+      ecValue: string
+      waterLevel: string
       created_at: Date
     }, ExtArgs["result"]["deviceState"]>
     composites: {}
@@ -3021,16 +2933,11 @@ export namespace Prisma {
   interface DeviceStateFieldRefs {
     readonly id: FieldRef<"DeviceState", 'Int'>
     readonly device_id: FieldRef<"DeviceState", 'String'>
-    readonly temperature: FieldRef<"DeviceState", 'Float'>
-    readonly humidity: FieldRef<"DeviceState", 'Float'>
-    readonly pressure: FieldRef<"DeviceState", 'Float'>
-    readonly light_level: FieldRef<"DeviceState", 'Float'>
-    readonly soil_moisture: FieldRef<"DeviceState", 'Float'>
-    readonly motion_detected: FieldRef<"DeviceState", 'Boolean'>
-    readonly co2_level: FieldRef<"DeviceState", 'Float'>
-    readonly gas_leak: FieldRef<"DeviceState", 'Boolean'>
-    readonly flame_detected: FieldRef<"DeviceState", 'Boolean'>
-    readonly noise_level: FieldRef<"DeviceState", 'Float'>
+    readonly temperature: FieldRef<"DeviceState", 'String'>
+    readonly humidity: FieldRef<"DeviceState", 'String'>
+    readonly phValue: FieldRef<"DeviceState", 'String'>
+    readonly ecValue: FieldRef<"DeviceState", 'String'>
+    readonly waterLevel: FieldRef<"DeviceState", 'String'>
     readonly created_at: FieldRef<"DeviceState", 'DateTime'>
   }
     
@@ -4581,14 +4488,9 @@ export namespace Prisma {
     device_id: 'device_id',
     temperature: 'temperature',
     humidity: 'humidity',
-    pressure: 'pressure',
-    light_level: 'light_level',
-    soil_moisture: 'soil_moisture',
-    motion_detected: 'motion_detected',
-    co2_level: 'co2_level',
-    gas_leak: 'gas_leak',
-    flame_detected: 'flame_detected',
-    noise_level: 'noise_level',
+    phValue: 'phValue',
+    ecValue: 'ecValue',
+    waterLevel: 'waterLevel',
     created_at: 'created_at'
   };
 
@@ -4679,6 +4581,13 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Boolean'
+   */
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+    
+
+
+  /**
    * Reference to a field of type 'Float'
    */
   export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -4689,13 +4598,6 @@ export namespace Prisma {
    * Reference to a field of type 'Float[]'
    */
   export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
-    
-
-
-  /**
-   * Reference to a field of type 'Boolean'
-   */
-  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
     
   /**
    * Deep Input Types
@@ -4768,16 +4670,11 @@ export namespace Prisma {
     NOT?: DeviceStateWhereInput | DeviceStateWhereInput[]
     id?: IntFilter<"DeviceState"> | number
     device_id?: StringFilter<"DeviceState"> | string
-    temperature?: FloatFilter<"DeviceState"> | number
-    humidity?: FloatFilter<"DeviceState"> | number
-    pressure?: FloatFilter<"DeviceState"> | number
-    light_level?: FloatFilter<"DeviceState"> | number
-    soil_moisture?: FloatFilter<"DeviceState"> | number
-    motion_detected?: BoolFilter<"DeviceState"> | boolean
-    co2_level?: FloatFilter<"DeviceState"> | number
-    gas_leak?: BoolFilter<"DeviceState"> | boolean
-    flame_detected?: BoolFilter<"DeviceState"> | boolean
-    noise_level?: FloatFilter<"DeviceState"> | number
+    temperature?: StringFilter<"DeviceState"> | string
+    humidity?: StringFilter<"DeviceState"> | string
+    phValue?: StringFilter<"DeviceState"> | string
+    ecValue?: StringFilter<"DeviceState"> | string
+    waterLevel?: StringFilter<"DeviceState"> | string
     created_at?: DateTimeFilter<"DeviceState"> | Date | string
     device?: XOR<DeviceScalarRelationFilter, DeviceWhereInput>
   }
@@ -4787,14 +4684,9 @@ export namespace Prisma {
     device_id?: SortOrder
     temperature?: SortOrder
     humidity?: SortOrder
-    pressure?: SortOrder
-    light_level?: SortOrder
-    soil_moisture?: SortOrder
-    motion_detected?: SortOrder
-    co2_level?: SortOrder
-    gas_leak?: SortOrder
-    flame_detected?: SortOrder
-    noise_level?: SortOrder
+    phValue?: SortOrder
+    ecValue?: SortOrder
+    waterLevel?: SortOrder
     created_at?: SortOrder
     device?: DeviceOrderByWithRelationInput
   }
@@ -4805,16 +4697,11 @@ export namespace Prisma {
     OR?: DeviceStateWhereInput[]
     NOT?: DeviceStateWhereInput | DeviceStateWhereInput[]
     device_id?: StringFilter<"DeviceState"> | string
-    temperature?: FloatFilter<"DeviceState"> | number
-    humidity?: FloatFilter<"DeviceState"> | number
-    pressure?: FloatFilter<"DeviceState"> | number
-    light_level?: FloatFilter<"DeviceState"> | number
-    soil_moisture?: FloatFilter<"DeviceState"> | number
-    motion_detected?: BoolFilter<"DeviceState"> | boolean
-    co2_level?: FloatFilter<"DeviceState"> | number
-    gas_leak?: BoolFilter<"DeviceState"> | boolean
-    flame_detected?: BoolFilter<"DeviceState"> | boolean
-    noise_level?: FloatFilter<"DeviceState"> | number
+    temperature?: StringFilter<"DeviceState"> | string
+    humidity?: StringFilter<"DeviceState"> | string
+    phValue?: StringFilter<"DeviceState"> | string
+    ecValue?: StringFilter<"DeviceState"> | string
+    waterLevel?: StringFilter<"DeviceState"> | string
     created_at?: DateTimeFilter<"DeviceState"> | Date | string
     device?: XOR<DeviceScalarRelationFilter, DeviceWhereInput>
   }, "id">
@@ -4824,14 +4711,9 @@ export namespace Prisma {
     device_id?: SortOrder
     temperature?: SortOrder
     humidity?: SortOrder
-    pressure?: SortOrder
-    light_level?: SortOrder
-    soil_moisture?: SortOrder
-    motion_detected?: SortOrder
-    co2_level?: SortOrder
-    gas_leak?: SortOrder
-    flame_detected?: SortOrder
-    noise_level?: SortOrder
+    phValue?: SortOrder
+    ecValue?: SortOrder
+    waterLevel?: SortOrder
     created_at?: SortOrder
     _count?: DeviceStateCountOrderByAggregateInput
     _avg?: DeviceStateAvgOrderByAggregateInput
@@ -4846,16 +4728,11 @@ export namespace Prisma {
     NOT?: DeviceStateScalarWhereWithAggregatesInput | DeviceStateScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"DeviceState"> | number
     device_id?: StringWithAggregatesFilter<"DeviceState"> | string
-    temperature?: FloatWithAggregatesFilter<"DeviceState"> | number
-    humidity?: FloatWithAggregatesFilter<"DeviceState"> | number
-    pressure?: FloatWithAggregatesFilter<"DeviceState"> | number
-    light_level?: FloatWithAggregatesFilter<"DeviceState"> | number
-    soil_moisture?: FloatWithAggregatesFilter<"DeviceState"> | number
-    motion_detected?: BoolWithAggregatesFilter<"DeviceState"> | boolean
-    co2_level?: FloatWithAggregatesFilter<"DeviceState"> | number
-    gas_leak?: BoolWithAggregatesFilter<"DeviceState"> | boolean
-    flame_detected?: BoolWithAggregatesFilter<"DeviceState"> | boolean
-    noise_level?: FloatWithAggregatesFilter<"DeviceState"> | number
+    temperature?: StringWithAggregatesFilter<"DeviceState"> | string
+    humidity?: StringWithAggregatesFilter<"DeviceState"> | string
+    phValue?: StringWithAggregatesFilter<"DeviceState"> | string
+    ecValue?: StringWithAggregatesFilter<"DeviceState"> | string
+    waterLevel?: StringWithAggregatesFilter<"DeviceState"> | string
     created_at?: DateTimeWithAggregatesFilter<"DeviceState"> | Date | string
   }
 
@@ -4983,16 +4860,11 @@ export namespace Prisma {
   }
 
   export type DeviceStateCreateInput = {
-    temperature: number
-    humidity: number
-    pressure: number
-    light_level: number
-    soil_moisture: number
-    motion_detected: boolean
-    co2_level: number
-    gas_leak: boolean
-    flame_detected: boolean
-    noise_level: number
+    temperature: string
+    humidity: string
+    phValue: string
+    ecValue: string
+    waterLevel: string
     created_at?: Date | string
     device: DeviceCreateNestedOneWithoutDevice_stateInput
   }
@@ -5000,30 +4872,20 @@ export namespace Prisma {
   export type DeviceStateUncheckedCreateInput = {
     id?: number
     device_id: string
-    temperature: number
-    humidity: number
-    pressure: number
-    light_level: number
-    soil_moisture: number
-    motion_detected: boolean
-    co2_level: number
-    gas_leak: boolean
-    flame_detected: boolean
-    noise_level: number
+    temperature: string
+    humidity: string
+    phValue: string
+    ecValue: string
+    waterLevel: string
     created_at?: Date | string
   }
 
   export type DeviceStateUpdateInput = {
-    temperature?: FloatFieldUpdateOperationsInput | number
-    humidity?: FloatFieldUpdateOperationsInput | number
-    pressure?: FloatFieldUpdateOperationsInput | number
-    light_level?: FloatFieldUpdateOperationsInput | number
-    soil_moisture?: FloatFieldUpdateOperationsInput | number
-    motion_detected?: BoolFieldUpdateOperationsInput | boolean
-    co2_level?: FloatFieldUpdateOperationsInput | number
-    gas_leak?: BoolFieldUpdateOperationsInput | boolean
-    flame_detected?: BoolFieldUpdateOperationsInput | boolean
-    noise_level?: FloatFieldUpdateOperationsInput | number
+    temperature?: StringFieldUpdateOperationsInput | string
+    humidity?: StringFieldUpdateOperationsInput | string
+    phValue?: StringFieldUpdateOperationsInput | string
+    ecValue?: StringFieldUpdateOperationsInput | string
+    waterLevel?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     device?: DeviceUpdateOneRequiredWithoutDevice_stateNestedInput
   }
@@ -5031,62 +4893,42 @@ export namespace Prisma {
   export type DeviceStateUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     device_id?: StringFieldUpdateOperationsInput | string
-    temperature?: FloatFieldUpdateOperationsInput | number
-    humidity?: FloatFieldUpdateOperationsInput | number
-    pressure?: FloatFieldUpdateOperationsInput | number
-    light_level?: FloatFieldUpdateOperationsInput | number
-    soil_moisture?: FloatFieldUpdateOperationsInput | number
-    motion_detected?: BoolFieldUpdateOperationsInput | boolean
-    co2_level?: FloatFieldUpdateOperationsInput | number
-    gas_leak?: BoolFieldUpdateOperationsInput | boolean
-    flame_detected?: BoolFieldUpdateOperationsInput | boolean
-    noise_level?: FloatFieldUpdateOperationsInput | number
+    temperature?: StringFieldUpdateOperationsInput | string
+    humidity?: StringFieldUpdateOperationsInput | string
+    phValue?: StringFieldUpdateOperationsInput | string
+    ecValue?: StringFieldUpdateOperationsInput | string
+    waterLevel?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type DeviceStateCreateManyInput = {
     id?: number
     device_id: string
-    temperature: number
-    humidity: number
-    pressure: number
-    light_level: number
-    soil_moisture: number
-    motion_detected: boolean
-    co2_level: number
-    gas_leak: boolean
-    flame_detected: boolean
-    noise_level: number
+    temperature: string
+    humidity: string
+    phValue: string
+    ecValue: string
+    waterLevel: string
     created_at?: Date | string
   }
 
   export type DeviceStateUpdateManyMutationInput = {
-    temperature?: FloatFieldUpdateOperationsInput | number
-    humidity?: FloatFieldUpdateOperationsInput | number
-    pressure?: FloatFieldUpdateOperationsInput | number
-    light_level?: FloatFieldUpdateOperationsInput | number
-    soil_moisture?: FloatFieldUpdateOperationsInput | number
-    motion_detected?: BoolFieldUpdateOperationsInput | boolean
-    co2_level?: FloatFieldUpdateOperationsInput | number
-    gas_leak?: BoolFieldUpdateOperationsInput | boolean
-    flame_detected?: BoolFieldUpdateOperationsInput | boolean
-    noise_level?: FloatFieldUpdateOperationsInput | number
+    temperature?: StringFieldUpdateOperationsInput | string
+    humidity?: StringFieldUpdateOperationsInput | string
+    phValue?: StringFieldUpdateOperationsInput | string
+    ecValue?: StringFieldUpdateOperationsInput | string
+    waterLevel?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type DeviceStateUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     device_id?: StringFieldUpdateOperationsInput | string
-    temperature?: FloatFieldUpdateOperationsInput | number
-    humidity?: FloatFieldUpdateOperationsInput | number
-    pressure?: FloatFieldUpdateOperationsInput | number
-    light_level?: FloatFieldUpdateOperationsInput | number
-    soil_moisture?: FloatFieldUpdateOperationsInput | number
-    motion_detected?: BoolFieldUpdateOperationsInput | boolean
-    co2_level?: FloatFieldUpdateOperationsInput | number
-    gas_leak?: BoolFieldUpdateOperationsInput | boolean
-    flame_detected?: BoolFieldUpdateOperationsInput | boolean
-    noise_level?: FloatFieldUpdateOperationsInput | number
+    temperature?: StringFieldUpdateOperationsInput | string
+    humidity?: StringFieldUpdateOperationsInput | string
+    phValue?: StringFieldUpdateOperationsInput | string
+    ecValue?: StringFieldUpdateOperationsInput | string
+    waterLevel?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -5324,22 +5166,6 @@ export namespace Prisma {
     _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
-  export type FloatFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatFilter<$PrismaModel> | number
-  }
-
-  export type BoolFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolFilter<$PrismaModel> | boolean
-  }
-
   export type DeviceScalarRelationFilter = {
     is?: DeviceWhereInput
     isNot?: DeviceWhereInput
@@ -5350,26 +5176,14 @@ export namespace Prisma {
     device_id?: SortOrder
     temperature?: SortOrder
     humidity?: SortOrder
-    pressure?: SortOrder
-    light_level?: SortOrder
-    soil_moisture?: SortOrder
-    motion_detected?: SortOrder
-    co2_level?: SortOrder
-    gas_leak?: SortOrder
-    flame_detected?: SortOrder
-    noise_level?: SortOrder
+    phValue?: SortOrder
+    ecValue?: SortOrder
+    waterLevel?: SortOrder
     created_at?: SortOrder
   }
 
   export type DeviceStateAvgOrderByAggregateInput = {
     id?: SortOrder
-    temperature?: SortOrder
-    humidity?: SortOrder
-    pressure?: SortOrder
-    light_level?: SortOrder
-    soil_moisture?: SortOrder
-    co2_level?: SortOrder
-    noise_level?: SortOrder
   }
 
   export type DeviceStateMaxOrderByAggregateInput = {
@@ -5377,14 +5191,9 @@ export namespace Prisma {
     device_id?: SortOrder
     temperature?: SortOrder
     humidity?: SortOrder
-    pressure?: SortOrder
-    light_level?: SortOrder
-    soil_moisture?: SortOrder
-    motion_detected?: SortOrder
-    co2_level?: SortOrder
-    gas_leak?: SortOrder
-    flame_detected?: SortOrder
-    noise_level?: SortOrder
+    phValue?: SortOrder
+    ecValue?: SortOrder
+    waterLevel?: SortOrder
     created_at?: SortOrder
   }
 
@@ -5393,50 +5202,19 @@ export namespace Prisma {
     device_id?: SortOrder
     temperature?: SortOrder
     humidity?: SortOrder
-    pressure?: SortOrder
-    light_level?: SortOrder
-    soil_moisture?: SortOrder
-    motion_detected?: SortOrder
-    co2_level?: SortOrder
-    gas_leak?: SortOrder
-    flame_detected?: SortOrder
-    noise_level?: SortOrder
+    phValue?: SortOrder
+    ecValue?: SortOrder
+    waterLevel?: SortOrder
     created_at?: SortOrder
   }
 
   export type DeviceStateSumOrderByAggregateInput = {
     id?: SortOrder
-    temperature?: SortOrder
-    humidity?: SortOrder
-    pressure?: SortOrder
-    light_level?: SortOrder
-    soil_moisture?: SortOrder
-    co2_level?: SortOrder
-    noise_level?: SortOrder
   }
 
-  export type FloatWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedFloatFilter<$PrismaModel>
-    _min?: NestedFloatFilter<$PrismaModel>
-    _max?: NestedFloatFilter<$PrismaModel>
-  }
-
-  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
+  export type BoolFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedBoolFilter<$PrismaModel>
-    _max?: NestedBoolFilter<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
   }
 
   export type MachineStateCountOrderByAggregateInput = {
@@ -5472,6 +5250,14 @@ export namespace Prisma {
 
   export type MachineStateSumOrderByAggregateInput = {
     id?: SortOrder
+  }
+
+  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
   }
 
   export type DeviceStateCreateNestedManyWithoutDeviceInput = {
@@ -5584,18 +5370,6 @@ export namespace Prisma {
     connect?: DeviceWhereUniqueInput
   }
 
-  export type FloatFieldUpdateOperationsInput = {
-    set?: number
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
-  }
-
-  export type BoolFieldUpdateOperationsInput = {
-    set?: boolean
-  }
-
   export type DeviceUpdateOneRequiredWithoutDevice_stateNestedInput = {
     create?: XOR<DeviceCreateWithoutDevice_stateInput, DeviceUncheckedCreateWithoutDevice_stateInput>
     connectOrCreate?: DeviceCreateOrConnectWithoutDevice_stateInput
@@ -5608,6 +5382,10 @@ export namespace Prisma {
     create?: XOR<DeviceCreateWithoutMachine_stateInput, DeviceUncheckedCreateWithoutMachine_stateInput>
     connectOrCreate?: DeviceCreateOrConnectWithoutMachine_stateInput
     connect?: DeviceWhereUniqueInput
+  }
+
+  export type BoolFieldUpdateOperationsInput = {
+    set?: boolean
   }
 
   export type DeviceUpdateOneRequiredWithoutMachine_stateNestedInput = {
@@ -5759,22 +5537,6 @@ export namespace Prisma {
     not?: NestedBoolFilter<$PrismaModel> | boolean
   }
 
-  export type NestedFloatWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedFloatFilter<$PrismaModel>
-    _min?: NestedFloatFilter<$PrismaModel>
-    _max?: NestedFloatFilter<$PrismaModel>
-  }
-
   export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
@@ -5784,31 +5546,21 @@ export namespace Prisma {
   }
 
   export type DeviceStateCreateWithoutDeviceInput = {
-    temperature: number
-    humidity: number
-    pressure: number
-    light_level: number
-    soil_moisture: number
-    motion_detected: boolean
-    co2_level: number
-    gas_leak: boolean
-    flame_detected: boolean
-    noise_level: number
+    temperature: string
+    humidity: string
+    phValue: string
+    ecValue: string
+    waterLevel: string
     created_at?: Date | string
   }
 
   export type DeviceStateUncheckedCreateWithoutDeviceInput = {
     id?: number
-    temperature: number
-    humidity: number
-    pressure: number
-    light_level: number
-    soil_moisture: number
-    motion_detected: boolean
-    co2_level: number
-    gas_leak: boolean
-    flame_detected: boolean
-    noise_level: number
+    temperature: string
+    humidity: string
+    phValue: string
+    ecValue: string
+    waterLevel: string
     created_at?: Date | string
   }
 
@@ -5869,16 +5621,11 @@ export namespace Prisma {
     NOT?: DeviceStateScalarWhereInput | DeviceStateScalarWhereInput[]
     id?: IntFilter<"DeviceState"> | number
     device_id?: StringFilter<"DeviceState"> | string
-    temperature?: FloatFilter<"DeviceState"> | number
-    humidity?: FloatFilter<"DeviceState"> | number
-    pressure?: FloatFilter<"DeviceState"> | number
-    light_level?: FloatFilter<"DeviceState"> | number
-    soil_moisture?: FloatFilter<"DeviceState"> | number
-    motion_detected?: BoolFilter<"DeviceState"> | boolean
-    co2_level?: FloatFilter<"DeviceState"> | number
-    gas_leak?: BoolFilter<"DeviceState"> | boolean
-    flame_detected?: BoolFilter<"DeviceState"> | boolean
-    noise_level?: FloatFilter<"DeviceState"> | number
+    temperature?: StringFilter<"DeviceState"> | string
+    humidity?: StringFilter<"DeviceState"> | string
+    phValue?: StringFilter<"DeviceState"> | string
+    ecValue?: StringFilter<"DeviceState"> | string
+    waterLevel?: StringFilter<"DeviceState"> | string
     created_at?: DateTimeFilter<"DeviceState"> | Date | string
   }
 
@@ -6012,16 +5759,11 @@ export namespace Prisma {
 
   export type DeviceStateCreateManyDeviceInput = {
     id?: number
-    temperature: number
-    humidity: number
-    pressure: number
-    light_level: number
-    soil_moisture: number
-    motion_detected: boolean
-    co2_level: number
-    gas_leak: boolean
-    flame_detected: boolean
-    noise_level: number
+    temperature: string
+    humidity: string
+    phValue: string
+    ecValue: string
+    waterLevel: string
     created_at?: Date | string
   }
 
@@ -6034,46 +5776,31 @@ export namespace Prisma {
   }
 
   export type DeviceStateUpdateWithoutDeviceInput = {
-    temperature?: FloatFieldUpdateOperationsInput | number
-    humidity?: FloatFieldUpdateOperationsInput | number
-    pressure?: FloatFieldUpdateOperationsInput | number
-    light_level?: FloatFieldUpdateOperationsInput | number
-    soil_moisture?: FloatFieldUpdateOperationsInput | number
-    motion_detected?: BoolFieldUpdateOperationsInput | boolean
-    co2_level?: FloatFieldUpdateOperationsInput | number
-    gas_leak?: BoolFieldUpdateOperationsInput | boolean
-    flame_detected?: BoolFieldUpdateOperationsInput | boolean
-    noise_level?: FloatFieldUpdateOperationsInput | number
+    temperature?: StringFieldUpdateOperationsInput | string
+    humidity?: StringFieldUpdateOperationsInput | string
+    phValue?: StringFieldUpdateOperationsInput | string
+    ecValue?: StringFieldUpdateOperationsInput | string
+    waterLevel?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type DeviceStateUncheckedUpdateWithoutDeviceInput = {
     id?: IntFieldUpdateOperationsInput | number
-    temperature?: FloatFieldUpdateOperationsInput | number
-    humidity?: FloatFieldUpdateOperationsInput | number
-    pressure?: FloatFieldUpdateOperationsInput | number
-    light_level?: FloatFieldUpdateOperationsInput | number
-    soil_moisture?: FloatFieldUpdateOperationsInput | number
-    motion_detected?: BoolFieldUpdateOperationsInput | boolean
-    co2_level?: FloatFieldUpdateOperationsInput | number
-    gas_leak?: BoolFieldUpdateOperationsInput | boolean
-    flame_detected?: BoolFieldUpdateOperationsInput | boolean
-    noise_level?: FloatFieldUpdateOperationsInput | number
+    temperature?: StringFieldUpdateOperationsInput | string
+    humidity?: StringFieldUpdateOperationsInput | string
+    phValue?: StringFieldUpdateOperationsInput | string
+    ecValue?: StringFieldUpdateOperationsInput | string
+    waterLevel?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type DeviceStateUncheckedUpdateManyWithoutDeviceInput = {
     id?: IntFieldUpdateOperationsInput | number
-    temperature?: FloatFieldUpdateOperationsInput | number
-    humidity?: FloatFieldUpdateOperationsInput | number
-    pressure?: FloatFieldUpdateOperationsInput | number
-    light_level?: FloatFieldUpdateOperationsInput | number
-    soil_moisture?: FloatFieldUpdateOperationsInput | number
-    motion_detected?: BoolFieldUpdateOperationsInput | boolean
-    co2_level?: FloatFieldUpdateOperationsInput | number
-    gas_leak?: BoolFieldUpdateOperationsInput | boolean
-    flame_detected?: BoolFieldUpdateOperationsInput | boolean
-    noise_level?: FloatFieldUpdateOperationsInput | number
+    temperature?: StringFieldUpdateOperationsInput | string
+    humidity?: StringFieldUpdateOperationsInput | string
+    phValue?: StringFieldUpdateOperationsInput | string
+    ecValue?: StringFieldUpdateOperationsInput | string
+    waterLevel?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 

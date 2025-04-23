@@ -19,19 +19,14 @@ model Device {
 }
 
 model DeviceState {
-  id              Int      @id @default(autoincrement()) @map("id")
-  device_id       String   @map("device_id")
-  temperature     Float    @map("temperature")
-  humidity        Float    @map("humidity")
-  pressure        Float    @map("pressure")
-  light_level     Float    @map("light_level")
-  soil_moisture   Float    @map("soil_moisture")
-  motion_detected Boolean  @map("motion_detected")
-  co2_level       Float    @map("co2_level")
-  gas_leak        Boolean  @map("gas_leak")
-  flame_detected  Boolean  @map("flame_detected")
-  noise_level     Float    @map("noise_level")
-  created_at      DateTime @default(now()) @map("created_at")
+  id          Int      @id @default(autoincrement()) @map("id")
+  device_id   String   @map("device_id")
+  temperature String   @map("temperature")
+  humidity    String   @map("humidity")
+  phValue     String   @map("ph_value")
+  ecValue     String   @map("ec_value")
+  waterLevel  String   @map("water_level")
+  created_at  DateTime @default(now()) @map("created_at")
 
   device Device @relation("Device_DeviceState", fields: [device_id], references: [device_id])
 }

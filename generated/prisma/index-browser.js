@@ -130,14 +130,9 @@ exports.Prisma.DeviceStateScalarFieldEnum = {
   device_id: 'device_id',
   temperature: 'temperature',
   humidity: 'humidity',
-  pressure: 'pressure',
-  light_level: 'light_level',
-  soil_moisture: 'soil_moisture',
-  motion_detected: 'motion_detected',
-  co2_level: 'co2_level',
-  gas_leak: 'gas_leak',
-  flame_detected: 'flame_detected',
-  noise_level: 'noise_level',
+  phValue: 'phValue',
+  ecValue: 'ecValue',
+  waterLevel: 'waterLevel',
   created_at: 'created_at'
 };
 
