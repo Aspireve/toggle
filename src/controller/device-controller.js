@@ -124,3 +124,27 @@ exports.getDeviceStates = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+exports.getLatestDeviceState = async (req, res) => {
+  try {
+    const { device_id } = req.params;
+
+    const device = await prisma.device.findUnique({
+      where: { device_id },
+    });
+
+    if (!device) return res.status(404).json({ error: "Device not found" });
+
+    const latestState = await prisma.deviceState.findFirst({
+      where: { device_id },
+      orderBy: { created_at: "desc" },
+    });
+
+    if (!latestState) return res.status(404).json({ error: "No states found" });
+
+    res.status(200).json(latestState);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
