@@ -54,6 +54,7 @@ exports.postDeviceState = async (req, res) => {
 
     res.status(201).json(newState);
   } catch (err) {
+    console.log(err)
     res.status(400).json({ error: err.message });
   }
 };
@@ -84,6 +85,7 @@ exports.postMachineState = async (req, res) => {
 
     res.status(201).json(updatedState);
   } catch (err) {
+    console.log(err)
     res.status(400).json({ error: err.message });
   }
 };
